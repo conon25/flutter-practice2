@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyBI61_YMkkSvaZMo5zeKK78vs-CN-4yBPk',
-    appId: '1:930419203888:web:9c4726065f2e5a2f3fb2f5',
-    messagingSenderId: '930419203888',
-    projectId: 'instagram-clone-8e3e1',
-    authDomain: 'instagram-clone-8e3e1.firebaseapp.com',
-    storageBucket: 'instagram-clone-8e3e1.appspot.com',
+    apiKey: 'Add your API key here',
+    appId: 'Add your App ID here',
+    messagingSenderId: 'Add your Messaging Sender ID here',
+    projectId: 'Add your Project ID here',
+    authDomain: 'Add your Auth Domain here',
+    storageBucket: 'Add your Storage Bucket here',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAMSAkKsxj-OaPsSxTh5MN_E279zSfMZPU',
-    appId: '1:930419203888:android:582c233b958322ff3fb2f5',
-    messagingSenderId: '930419203888',
-    projectId: 'instagram-clone-8e3e1',
-    storageBucket: 'instagram-clone-8e3e1.appspot.com',
+    apiKey: 'Add your API key here',
+    appId: 'Add your App ID here',
+    messagingSenderId: 'Add your Messaging Sender ID here',
+    projectId: 'Add your Project ID here',
+    storageBucket: 'Add your Storage Bucket here',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyC__nFCmRhjLmvKB1xRq3IMZxV8NmdiUFE',
-    appId: '1:930419203888:ios:692d320a850eddc83fb2f5',
-    messagingSenderId: '930419203888',
-    projectId: 'instagram-clone-8e3e1',
-    storageBucket: 'instagram-clone-8e3e1.appspot.com',
-    iosClientId: '930419203888-90bfqacu2aeoaupkfhblqvdnqccr8ob0.apps.googleusercontent.com',
-    iosBundleId: 'com.example.instagramClone1',
+    apiKey: 'Add your API key here',
+    appId: 'Add your App ID here',
+    messagingSenderId: 'Add your Messaging Sender ID here',
+    projectId: 'Add your Project ID here',
+    storageBucket: 'Add your Storage Bucket here',
+    iosClientId: 'Add your iOS Client ID here',
+    iosBundleId: 'Add your iOS Bundle ID here',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyC__nFCmRhjLmvKB1xRq3IMZxV8NmdiUFE',
-    appId: '1:930419203888:ios:692d320a850eddc83fb2f5',
-    messagingSenderId: '930419203888',
-    projectId: 'instagram-clone-8e3e1',
-    storageBucket: 'instagram-clone-8e3e1.appspot.com',
-    iosClientId: '930419203888-90bfqacu2aeoaupkfhblqvdnqccr8ob0.apps.googleusercontent.com',
-    iosBundleId: 'com.example.instagramClone1',
+    apiKey: 'Add your API key here',
+    appId: 'Add your App ID here',
+    messagingSenderId: 'Add your Messaging Sender ID here',
+    projectId: 'Add your Project ID here',
+    storageBucket: 'Add your Storage Bucket here',
+    iosClientId: 'Add your iOS Client ID here',
+    iosBundleId: 'Add your iOS Bundle ID here',
   );
 }
