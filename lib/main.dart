@@ -1,103 +1,85 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'AddRestaurantScreen.dart';
+import 'restaurant.dart';
+
+// 더미 데이터
+final List<Restaurant> dummyRestaurants = [
+  Restaurant(
+    name: '김밥천국',
+    category: '한식',
+    subCategory: '분식',
+    address: '서울시 강남구',
+    rating: 4.2,
+  ),
+  Restaurant(
+    name: '고기굽는집',
+    category: '한식',
+    subCategory: '고기집',
+    address: '서울시 종로구',
+    rating: 4.8,
+  ),
+  Restaurant(
+    name: '파스타하우스',
+    category: '양식',
+    subCategory: '파스타',
+    address: '서울시 마포구',
+    rating: 3.9,
+  ),
+];
 
 void main() {
-  runApp(const MyApp());
+  runApp(RestaurantReviewApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class RestaurantReviewApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo Branch',
+      title: '음식점 리뷰',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MainScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
+class MainScreen extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MainScreen> createState() => _MainScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  // 깜빡임 상태 변수와 타이머 선언
-  bool _showTrue = true;
-  late Timer _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    // 1초마다 _showTrue 값을 토글
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      setState(() {
-        _showTrue = !_showTrue;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer.cancel(); // 타이머 해제
-    super.dispose();
-  }
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+class _MainScreenState extends State<MainScreen> {
+  List<Restaurant> restaurantList = List.from(dummyRestaurants);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 30),
-            AnimatedOpacity(
-              opacity: _showTrue ? 1.0 : 0.0,
-              duration: const Duration(milliseconds: 400),
-              child: const Text(
-                'True',
-                style: TextStyle(
-                  color: Colors.red,
-                  fontSize: 32,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-            ),
-          ],
-        ),
+      appBar: AppBar(title: Text('음식점 리뷰')),
+      body: ListView.builder(
+        itemCount: restaurantList.length,
+        itemBuilder: (context, index) {
+          final restaurant = restaurantList[index];
+          return ListTile(
+            title: Text(restaurant.name),
+            subtitle: Text('${restaurant.category} > ${restaurant.subCategory}\n${restaurant.address}'),
+            trailing: Text('⭐️ ${restaurant.rating}'),
+          );
+        },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
+        child: Icon(Icons.add),
+        onPressed: () async {
+          final newRestaurant = await Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => AddRestaurantScreen()),
+          );
+          if (newRestaurant != null) {
+            setState(() {
+              restaurantList.add(newRestaurant);
+            });
+          }
+        },
       ),
     );
   }
