@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'AddRestaurantScreen.dart';
 import 'restaurant.dart';
+import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 // 더미 데이터
 final List<Restaurant> dummyRestaurants = [
@@ -26,9 +27,9 @@ final List<Restaurant> dummyRestaurants = [
     rating: 3.9,
   ),
 ];
-
-void main() {
-  runApp(RestaurantReviewApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(RestaurantReviewApp()); // 혹은 RestaurantReviewApp()
 }
 
 class RestaurantReviewApp extends StatelessWidget {

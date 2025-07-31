@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:daum_postcode_search/daum_postcode_search.dart';
 import 'restaurant.dart';
+import 'AddressSearchWebView.dart'; // 상단에 import 추가
 
 final categories = {
   '한식': ['분식', '고기집', '국밥'],
@@ -91,32 +91,14 @@ class _AddRestaurantScreenState extends State<AddRestaurantScreen> {
                       final result = await Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => Scaffold(
-                            appBar: AppBar(title: Text('주소 검색')),
-                            body: DaumPostcodeSearch(
-                              onConsoleMessage: (_, message) => print(message),
-                              onReceivedError: (controller, request, error) {
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  SnackBar(content: Text('로딩 에러: ${error.description}')),
-                                );
-                              },
-                            ),
-                          ),
+                          builder: (_) => const AddressSearchWebView(),
                         ),
                       );
-                      if (result != null) {
-                        // DataModel 타입: result.address, Map 타입: result['address']
-                        String? addressValue;
-                        if (result is Map && result['address'] != null) {
-                          addressValue = result['address'];
-                        } else if (result.address != null) {
-                          addressValue = result.address;
-                        }
-                        if (addressValue != null && addressValue.isNotEmpty) {
-                          setState(() {
-                            addressController.text = addressValue!;
-                          });
-                        }
+
+                      if (result != null && result is String && result.isNotEmpty) {
+                        setState(() {
+                          addressController.text = result;
+                        });
                       }
                     },
                     child: Text('주소찾기'),

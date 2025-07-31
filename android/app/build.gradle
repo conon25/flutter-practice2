@@ -44,6 +44,11 @@ android {
         versionName = flutterVersionName
     }
 
+    // ✅ 여기에 추가
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>다음 주소 검색</title>
+    <script src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <style>
+        html, body, #wrap {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap"></div>
+<script>
+    new daum.Postcode({
+      oncomplete: function(data) {
+        window.flutter_inappwebview.callHandler("onSelectAddress", data);
+      }
+    }).embed(document.getElementById("wrap"));
+</script>
+</body>
+</html>
