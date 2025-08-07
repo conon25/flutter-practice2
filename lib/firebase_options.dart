@@ -22,20 +22,20 @@ class DefaultFirebaseOptions {
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
         return android;
-      case TargetPlatform.iOS:
-        return ios;
-      case TargetPlatform.macOS:
-        return macos;
-      case TargetPlatform.windows:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for windows - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
-      case TargetPlatform.linux:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for linux - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+      // case TargetPlatform.iOS:
+      //   return ios;
+      // case TargetPlatform.macOS:
+      //   return macos;
+      // case TargetPlatform.windows:
+      //   throw UnsupportedError(
+      //     'DefaultFirebaseOptions have not been configured for windows - '
+      //     'you can reconfigure this by running the FlutterFire CLI again.',
+      //   );
+      // case TargetPlatform.linux:
+      //   throw UnsupportedError(
+      //     'DefaultFirebaseOptions have not been configured for linux - '
+      //     'you can reconfigure this by running the FlutterFire CLI again.',
+      //   );
       default:
         throw UnsupportedError(
           'DefaultFirebaseOptions are not supported for this platform.',
@@ -44,39 +44,39 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'Add your API key here',
-    appId: 'Add your App ID here',
-    messagingSenderId: 'Add your Messaging Sender ID here',
-    projectId: 'Add your Project ID here',
-    authDomain: 'Add your Auth Domain here',
-    storageBucket: 'Add your Storage Bucket here',
+    apiKey: 'AIzaSyD5LDSfxUyscQzrnlGce3mkw9UU2-3eOIE',
+    appId: '1:135517419909:android:e4b55917d995236e15acec',
+    messagingSenderId: '135517419909',
+    projectId: 'flutter-practice-125f6',
+    authDomain: 'flutter-practice-125f6.firebaseapp.com',
+    storageBucket: 'flutter-practice-125f6.firebasestorage.app',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'Add your API key here',
-    appId: 'Add your App ID here',
-    messagingSenderId: 'Add your Messaging Sender ID here',
-    projectId: 'Add your Project ID here',
-    storageBucket: 'Add your Storage Bucket here',
+    apiKey: 'AIzaSyD5LDSfxUyscQzrnlGce3mkw9UU2-3eOIE',
+    appId: '1:135517419909:android:e4b55917d995236e15acec',
+    messagingSenderId: '135517419909',
+    projectId: 'flutter-practice-125f6',
+    authDomain: 'flutter-practice-125f6.firebaseapp.com',
+    storageBucket: 'flutter-practice-125f6.firebasestorage.app',
   );
 
-  static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'Add your API key here',
-    appId: 'Add your App ID here',
-    messagingSenderId: 'Add your Messaging Sender ID here',
-    projectId: 'Add your Project ID here',
-    storageBucket: 'Add your Storage Bucket here',
-    iosClientId: 'Add your iOS Client ID here',
-    iosBundleId: 'Add your iOS Bundle ID here',
-  );
+  // static const FirebaseOptions ios = FirebaseOptions(
+  //   apiKey: 'AIzaSyD5LDSfxUyscQzrnlGce3mkw9UU2-3eOIE',
+  //   appId: '1:135517419909:android:e4b55917d995236e15acec',
+  //   messagingSenderId: '135517419909',
+  //   projectId: 'flutter-practice-125f6',
+  //   authDomain: 'flutter-practice-125f6.firebaseapp.com',
+  //   storageBucket: 'flutter-practice-125f6.firebasestorage.app',
+  // );
 
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'Add your API key here',
-    appId: 'Add your App ID here',
-    messagingSenderId: 'Add your Messaging Sender ID here',
-    projectId: 'Add your Project ID here',
-    storageBucket: 'Add your Storage Bucket here',
-    iosClientId: 'Add your iOS Client ID here',
-    iosBundleId: 'Add your iOS Bundle ID here',
-  );
+  // static const FirebaseOptions macos = FirebaseOptions(
+  //   apiKey: 'Add your API key here',
+  //   appId: 'Add your App ID here',
+  //   messagingSenderId: 'Add your Messaging Sender ID here',
+  //   projectId: 'Add your Project ID here',
+  //   storageBucket: 'Add your Storage Bucket here',
+  //   iosClientId: 'Add your iOS Client ID here',
+  //   iosBundleId: 'Add your iOS Bundle ID here',
+  // );
 }
