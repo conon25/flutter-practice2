@@ -1,3 +1,12 @@
+** 초기 셋팅 방법 **
+- 플러터SDK 버전 3.10.5
+- 자바JDK 버전 17 셋팅
+- 자바경로 환경변수 추가 - JAVA_HOME
+
+** firebase auth 연결 완료 **
+테스트 계정 : test@gmail.com / testtest12#
+
+
 <div align="center">
 
 # 📸 Instagram Clone
