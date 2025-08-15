@@ -6,6 +6,9 @@
 ** firebase auth 연결 완료 **
 테스트 계정 : test@gmail.com / testtest12#
 
+** firestore database 연결 완료 **
+** storage 연결 완료 **
+
 
 <div align="center">
 
