@@ -31,20 +31,20 @@ class _PostCardState extends State<PostCard> {
   }
 
   void getComments() async {
-    // StreamBuilder(
-    //   stream: FirebaseFirestore.instance
-    //       .collection('posts')
-    //       .doc(widget.snap['postId'])
-    //       .collection('comments')
-    //       .snapshots(),
-    //   builder: (context, snapshot) {
-    //     if (snapshot.hasData) {
-    //       numberOfComments = snapshot.data!.docs.length;
-    //       print(numberOfComments);
-    //     }
-    //     return const CircularProgressIndicator();
-    //   },
-    // );
+    StreamBuilder(
+      stream: FirebaseFirestore.instance
+          .collection('posts')
+          .doc(widget.snap['postId'])
+          .collection('comments')
+          .snapshots(),
+      builder: (context, snapshot) {
+        if (snapshot.hasData) {
+          numberOfComments = snapshot.data!.docs.length;
+          print(numberOfComments);
+        }
+        return const CircularProgressIndicator();
+      },
+    );
 
     final QuerySnapshot snap = await FirebaseFirestore.instance
         .collection('posts')

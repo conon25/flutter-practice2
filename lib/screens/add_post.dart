@@ -102,6 +102,12 @@ class _AddPostState extends State<AddPost> {
   @override
   Widget build(BuildContext context) {
     final UserProvider userProvider = Provider.of<UserProvider>(context);
+    final user = userProvider.getUser;
+
+    if (user == null) {
+      return const Center(child: CircularProgressIndicator());
+    }
+
     return _image == null
         ? Center(
             child: IconButton(

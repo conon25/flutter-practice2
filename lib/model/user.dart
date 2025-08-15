@@ -37,7 +37,7 @@ static User fromSnap(DocumentSnapshot snap) {
     );
   }
 
-  Map<String, dynamic> toJason() => {
+  Map<String, dynamic> toJson() => {
         'email': email,
         'uid': uid,
         'fullName': fullName,
